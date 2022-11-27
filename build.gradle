@@ -1,0 +1,58 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply(from: "$rootDir/dependencies.gradle")
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath(classpaths.gradleBuildTools)
+        classpath(classpaths.kotlinGradlePlugin)
+        classpath(classpaths.safeArgs)
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+subprojects {
+
+    if (project.name == "app") {
+        apply(plugin: "com.android.application")
+        android {
+            defaultConfig {
+                applicationId application.id
+                signingConfig signingConfigs.debug
+            }
+        }
+
+
+    } else {
+        apply(plugin: "com.android.library")
+    }
+
+    android {
+        defaultConfig {
+            compileSdk application.maxApi
+            minSdk application.minApi
+            targetSdk application.targetSdk
+            versionCode application.versionCode
+            versionName application.versionName
+        }
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    apply(plugin: "kotlin-android")
+
+//    dependencies {
+//        implementation(libraries.kotlinStdLib)
+//    }
+}
+

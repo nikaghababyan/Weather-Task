@@ -1,0 +1,86 @@
+ext {
+
+    versions = [
+            "gradleBuildTools"        : "7.0.4",
+            "kotlin"                  : "1.6.10",
+            "material"                : "1.4.0",
+            "okHttp3"                 : "4.9.0",
+            "androidxCoreKtx"         : "1.7.0",
+            "androidxAppcompat"       : "1.4.0",
+            "androidxConstraintLayout": '2.1.0',
+            "androidxlifecycle"       : "2.3.0",
+            "lifecycleCommon"         : "2.3.1",
+            "androidxFragment"        : "1.2.2",
+            "androidxNavigation"      : "2.3.5",
+            "koin"                    : "3.1.5",
+            "retrofitVersion"         : '2.9.0',
+            "moshiConverterVersion"   : '2.9.0',
+            "loggingVersion"          : '5.0.0-alpha.2',
+            "roomVersion"             : '2.3.0',
+            "navVersion"              : '2.3.5',
+            "legacySupportVersion"    : '1.0.0',
+            "coroutinesVersion"       : '1.5.1',
+            "locationVersion"         : '19.0.1',
+            // test
+            "junitVersion"            : '4.13.2',
+            "androidxJunitVersion"    : '1.1.3',
+            "espressoCoreVersion"     : '3.4.0',
+            "coroutinesTestVersion"   : '1.5.1',
+            "archCoreTesting"         : '2.1.0',
+            "koinTest"                : '3.1.4',
+            "coilVersion"             : "1.3.2",
+    ]
+
+    application = [
+            "id"         : "com.example.weather",
+            "minApi"     : 21,
+            "maxApi"     : 31,
+            "targetSdk"  : 31,
+            "versionCode": 1,
+            "versionName": "1.0.0",
+    ]
+
+    classpaths = [
+            "gradleBuildTools"  : "com.android.tools.build:gradle:$versions.gradleBuildTools",
+            "kotlinGradlePlugin": "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+            "safeArgs"          : "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navVersion"
+    ]
+
+    libraries = [
+            "material"          : "com.google.android.material:material:$versions.material",
+            "koinAndroid"       : "io.insert-koin:koin-android:$versions.koin",
+            "retrofit"          : "com.squareup.retrofit2:retrofit:$versions.retrofitVersion",
+            "moshiConverter"    : "com.squareup.retrofit2:converter-moshi:$versions.moshiConverterVersion",
+            "loggingInterceptor": "com.squareup.okhttp3:logging-interceptor:$versions.loggingVersion",
+            "coroutines"        : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion",
+            "location"          : "com.google.android.gms:play-services-location:$versions.locationVersion",
+            "coil"              : "io.coil-kt:coil:$versions.coilVersion",
+    ]
+
+    androidTest = [
+            "androidxJunit"       : "androidx.test.ext:junit:$versions.androidxJunitVersion",
+            "androidxEspressoCore": "androidx.test.espresso:espresso-core:$versions.espressoCoreVersion",
+            "archCoreTesting"     : "androidx.arch.core:core-testing:$versions.archCoreTesting",
+    ]
+
+    test = [
+            "junit"         : "junit:junit:$versions.junitVersion",
+            "coroutinesTest": "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutinesTestVersion",
+            "koinTest"      : "io.insert-koin:koin-test:$versions.koinTest",
+            "koinTestJunit4"      : "io.insert-koin:koin-test-junit4:$versions.koinTest",
+
+    ]
+
+    androidXLibraries = [
+            "coreKtx"              : "androidx.core:core-ktx:$versions.androidxCoreKtx",
+            "appCompat"            : "androidx.appcompat:appcompat:$versions.androidxAppcompat",
+            "legacySupport"        : "androidx.legacy:legacy-support-v4:$versions.legacySupportVersion",
+            "constraintLayout"     : "androidx.constraintlayout:constraintlayout:$versions.androidxConstraintLayout",
+            "lifecycleCommon"      : "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycleCommon",
+            "fragmentKtx"          : "androidx.fragment:fragment-ktx:$versions.androidxFragment",
+            "navigationFragmentKtx": "androidx.navigation:navigation-fragment-ktx:$versions.androidxNavigation",
+            "navigationUiKtx"      : "androidx.navigation:navigation-ui-ktx:$versions.androidxNavigation",
+            "roomRuntime"          : "androidx.room:room-runtime:$versions.roomVersion",
+            "roomCompiler"         : "androidx.room:room-compiler:$versions.roomVersion"
+    ]
+}

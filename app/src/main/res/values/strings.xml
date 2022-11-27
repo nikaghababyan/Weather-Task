@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="location_name">Location: %1$s</string>
+    <string name="location_lon">Location lon: %,.4f</string>
+    <string name="location_lat">Location lat: %,.4f</string>
+    <string name="temp_f">Temperature: %,.2f F</string>
+    <string name="temp_c">Temperature: %,.2f C</string>
+    <string name="humidity">Humidity: %1$d</string>
+    <string name="sea_level">Sea level: %1$d</string>
+</resources>

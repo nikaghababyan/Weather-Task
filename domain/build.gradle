@@ -1,0 +1,22 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+}
+
+dependencies {
+
+    implementation project(path: ':core')
+    implementation project(path: ':data')
+    implementation 'androidx.test:core-ktx:1.4.0'
+    testImplementation (test.junit)
+    testImplementation (test.koinTestJunit4)
+    testImplementation (test.coroutinesTest)
+    testImplementation (androidTest.archCoreTesting)
+    androidTestImplementation (androidTest.androidxJunit)
+    androidTestImplementation (androidTest.androidxEspressoCore)
+    implementation(androidXLibraries.coreKtx)
+    implementation(libraries.koinAndroid)
+    implementation(libraries.coroutines)
+
+}
